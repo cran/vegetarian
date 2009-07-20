@@ -4,7 +4,7 @@
 \description{The \code{d} function calculates the numbers equivalent or effective numbers of species for alpha, beta or gamma diversity as described by Jost (2006, 2007).  These are sometimes referred to as 'Hill numbers' (Hill 1973).  Jost's interpretation of these number equivalents are more general than Hill's because as the order (q) changes, the sensitivity of the diversity to rare and common species changes.  According to Jost (2007), for alpha diversity \code{d} calculates Equation 11a for the general case for q and Equation 11b for the Shannon case where q = 1.  See Jost (2006) for more on the history and theory behind diversity indices and numbers equivalents.
 }
 \usage{
-d(abundances, lev = "alpha", wts = FALSE, q = 1, boot = FALSE, boot.arg = list(s.sizes = "default", num.iter = 100))
+d(abundances, lev = "alpha", wts = FALSE, q = 1, boot = FALSE, boot.arg = list(s.sizes = NULL, num.iter = 100))
 }
 \arguments{
   \item{abundances}{ Community data as a matrix where columns are individual species and rows are sites.  Matrix elements are abundance data (e.g. counts, percent cover estimates).}

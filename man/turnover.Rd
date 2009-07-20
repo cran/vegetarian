@@ -5,11 +5,11 @@
 For numerous communities of equal weights, the numbers equivalent of the Shannon beta diversity and the number of samples (N) can be used to calculate the turnover rate per sample (Equation 25 from Jost 2007, Harrison et al. 1992).
 }
 \usage{
-turnover(abundances, abundances2 = FALSE, q = 1, boot = FALSE, boot.arg = list(s.sizes = "default", num.iter = 100))
+turnover(abundances, abundances2 = NULL, q = 1, boot = FALSE, boot.arg = list(s.sizes = NULL, num.iter = 100))
 }
 \arguments{
   \item{abundances}{Community data as a matrix where columns are individual species and rows are sites or a vector of different species within a site. Matrix and vector elements are abundance data (e.g. counts, percent cover estimates). }
-  \item{abundances2}{Community data, a vector of different species within a site. Vector elements are abundance data (e.g. counts, percent cover estimates). If abundances1 is given a matrix, then abundances2 defaults to a logical FALSE statement.}
+  \item{abundances2}{Community data, a vector of different species within a site. Vector elements are abundance data (e.g. counts, percent cover estimates). If abundances1 is given a matrix, then abundances2 defaults to NULL.}
   \item{q}{Order of the diversity measure. Defaults to the Shannon case where q = 1.}
   \item{boot}{Logical indicating whether to use bootstrapping to estimate uncertainty.}
   \item{boot.arg}{(optional) List of arguments to pass bootstrapping function: list(s.sizes=number you specify, num.iter=number you specify)}

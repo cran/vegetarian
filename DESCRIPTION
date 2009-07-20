@@ -1,7 +1,7 @@
 Package: vegetarian
 Type: Package
 Title: Jost Diversity Measures for Community Data
-Version: 1.1
+Version: 1.2
 Date: 2009-07-20
 Author: Noah Charney, Sydne Record
 Maintainer: Noah Charney <noah@alumni.amherst.edu>
@@ -25,6 +25,6 @@ Description: This package computes diversity for community data sets
 License: GPL-2
 LazyLoad: yes
 Depends: stats
-Packaged: Mon Aug 24 09:32:24 2009; Sydne Record
+Packaged: 2012-10-29 08:59:58 UTC; ripley
 Repository: CRAN
-Date/Publication: 2009-08-24 17:54:36
+Date/Publication: 2012-10-29 08:59:58

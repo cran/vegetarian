@@ -5,11 +5,11 @@
 Provides a comparison between communities with unequal weights based on the numbers equivalent of the Shannon beta diversity (Jost 2007).  When community weights are not equal, the Shannon measures of diversity where q=1, are still valid and can be used to calculate a relative measure of homogeneity derived from MacArthur's homogeneity measure (Equation 22 from Jost 2007).
 }
 \usage{
-Rel.homog(abundances, abundances2 = "default", wts = FALSE, boot = FALSE, boot.arg = list(s.sizes = "default", num.iter = 100))
+Rel.homog(abundances, abundances2 = NULL, wts = FALSE, boot = FALSE, boot.arg = list(s.sizes = NULL, num.iter = 100))
 }
 \arguments{
   \item{abundances}{Community data as a matrix where columns are individual species and rows are sites or a vector of different species within a site.  Matrix and vector elements are abundance data (e.g. counts, percent cover estimates).}
-  \item{abundances2}{Community data, a vector of different species within a site.  Vector elements are abundance data (e.g. counts, percent cover estimates).  If abundances is given a matrix, then abundances2 defaults to 'default.'}
+  \item{abundances2}{Community data, a vector of different species within a site.  Vector elements are abundance data (e.g. counts, percent cover estimates).  If abundances is given a matrix, then abundances2 defaults to NULL.}
   \item{wts}{A vector of community weights whose length equals the number of communities being compared.  See details below for examples of when community weights might be treated as equal or unequal. Defaults to wts=FALSE where all communities are equally weighted.}
   \item{boot}{Logical indicating whether to use bootstrapping to estimate uncertainty.}
   \item{boot.arg}{(optional) List of arguments to pass bootstrapping function: list(s.sizes=number you specify, num.iter=number you specify)}

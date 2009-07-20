@@ -39,13 +39,13 @@ temp.sum
 
  
 #______________________________________________________
-bootstrap<-function(abundances,s.sizes="default",num.iter=100,func,func.arg="blank",sim.pop=FALSE,sim.par=FALSE){
+bootstrap<-function(abundances,s.sizes=NULL,num.iter=100,func,func.arg="blank",sim.pop=FALSE,sim.par=FALSE){
 #func is the function (e.g. d)
 #arg is a list of the arguments the function needs (e.g. list(q=1,wts=FALSE) )
 require(stats)
 num.sites<-dim(abundances)[1]
 num.spec<-dim(abundances)[2]
-if(s.sizes[1]=="default"){s.sizes<-apply(abundances,1,sum)} 
+if(is.null(s.sizes)){s.sizes<-apply(abundances,1,sum)} 
 #if s.sizes is not specified, then assumes scores are counts, and sum or rows is sample sizes
 boots<-array(NA,dim=c(num.sites,num.spec,num.iter))
 simulated.param<-vector(length=num.iter)
@@ -84,7 +84,7 @@ OUT
 }
 
 #____________________________________________________________
-d<-function(abundances,lev="alpha",wts=FALSE,q=1,boot=FALSE,boot.arg=list(s.sizes="default",num.iter=100)){
+d<-function(abundances,lev="alpha",wts=FALSE,q=1,boot=FALSE,boot.arg=list(s.sizes=NULL,num.iter=100)){
 #boot.arg is a list of arguments to feed bootstrap (e.g. boot.arg=list(s.sizes=c(10,12,10,20,6),num.iter=50) )
 if(is.data.frame(abundances)){abundances<-as.matrix(abundances)}
 
@@ -160,7 +160,7 @@ output
 }
 
 #__________________________________________________________________________
-H<-function(abundances,lev="alpha",wts=FALSE,q=1,HCDT=FALSE,gini=FALSE,boot=FALSE,boot.arg=list(s.sizes="default",num.iter=100)){
+H<-function(abundances,lev="alpha",wts=FALSE,q=1,HCDT=FALSE,gini=FALSE,boot=FALSE,boot.arg=list(s.sizes=NULL,num.iter=100)){
 #based on Jost 2008 table 1
 if(is.data.frame(abundances)){abundances<-as.matrix(abundances)}
 
@@ -204,12 +204,12 @@ output
 #________________________________________________________________________
 
  
-M.homog<-function(abundances,abundances2="default",q=1,std=FALSE,boot=FALSE,boot.arg=list(s.sizes="default",num.iter=100)){
+M.homog<-function(abundances,abundances2=NULL,q=1,std=FALSE,boot=FALSE,boot.arg=list(s.sizes=NULL,num.iter=100)){
 #can be given as two vectors, or a single matrix with two rows
 if(is.data.frame(abundances)){abundances<-as.matrix(abundances)}
 if(is.data.frame(abundances2)){abundances2<-as.vector(abundances2)}
 
-if((abundances2!="default")[1]){
+if(!is.null(abundances2)){
 abundances<-rbind(abundances,abundances2)
 }
 N<-dim(abundances)[1]
@@ -232,8 +232,8 @@ output
 }
 #______________________________________________________
 
-Rel.homog<-function(abundances,abundances2="default",wts=FALSE,boot=FALSE,boot.arg=list(s.sizes="default",num.iter=100)){
-if((abundances2!="default")[1]){
+Rel.homog<-function(abundances,abundances2=NULL,wts=FALSE,boot=FALSE,boot.arg=list(s.sizes=NULL,num.iter=100)){
+if(!is.null(abundances2)){
 abundances<-rbind(abundances,abundances2)
 }
 
@@ -263,11 +263,11 @@ output
 }
 
 #______________________________________________________
-similarity<-function(abundances,abundances2=FALSE,q=1,boot=FALSE,boot.arg=list(s.sizes="default",num.iter=100)){
-if((abundances2!="default")[1]){
-
+similarity<-function(abundances,abundances2=NULL,q=1,boot=FALSE,boot.arg=list(s.sizes=NULL,num.iter=100)){
+if(!is.null(abundances2)){
 abundances<-rbind(abundances,abundances2)
 }
+
 N<-dim(abundances)[1]
 if(q=="shannon"){q<-1}
 
@@ -296,8 +296,8 @@ output
 #______________________________________________________
 
 
-turnover<-function(abundances,abundances2=FALSE,q=1,boot=FALSE,boot.arg=list(s.sizes="default",num.iter=100)){
-if(is.vector(abundances)&is.vector(abundances2)){
+turnover<-function(abundances,abundances2=NULL,q=1,boot=FALSE,boot.arg=list(s.sizes=NULL,num.iter=100)){
+if(is.vector(abundances)&!is.null(abundances2)){
 abundances<-rbind(abundances,abundances2)
 }
 
@@ -320,7 +320,7 @@ output
 
 #______________________________________________________
 
-sim.table<-function(abundances,q=1,labels=FALSE,half=TRUE,diag=TRUE,boot=FALSE,boot.arg=list(s.sizes="default",num.iter=100)){
+sim.table<-function(abundances,q=1,labels=FALSE,half=TRUE,diag=TRUE,boot=FALSE,boot.arg=list(s.sizes=NULL,num.iter=100)){
 num.sites<-dim(abundances)[1]
 ifelse(diag==TRUE,k<-0,k<-1)
 func.arg<-list(q=q)
@@ -381,7 +381,7 @@ sim.matrix
 #______________________________________________________
 
 
-sim.groups<-function(abundances1,abundances2,q=1,labels=FALSE,boot=FALSE,boot.arg=list(s.sizes="default",num.iter=100)){
+sim.groups<-function(abundances1,abundances2,q=1,labels=FALSE,boot=FALSE,boot.arg=list(s.sizes=NULL,num.iter=100)){
 func.arg<-list(q=q)
 
 num.sites1<-dim(abundances1)[1]

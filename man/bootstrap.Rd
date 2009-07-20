@@ -4,7 +4,7 @@
 \description{
 Diversity measure provided in the vegetarian library call bootstrap to estimate standard error for the parameter outputs.  Bootstrap generates simulated populations from a multinormal distribution centered around the community matrix provided and applies the function of interest to the simulated data.  Requires stats package.}
 \usage{
-bootstrap(abundances, s.sizes = "default", num.iter = 100, func, func.arg = "blank", sim.pop = FALSE, sim.par = FALSE)
+bootstrap(abundances, s.sizes = NULL, num.iter = 100, func, func.arg = "blank", sim.pop = FALSE, sim.par = FALSE)
 }
 \arguments{
   \item{abundances}{	Community data as a matrix where columns are individual species and rows are sites.  Matrix elements are abundance data (e.g. counts, percent cover estimates).  }

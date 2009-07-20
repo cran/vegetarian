@@ -3,7 +3,7 @@
 \title{Similarity Summary Table}
 \description{Creates a summary table of community overlap for all possible pairwise combinations of samples (e.g. sites, plots) using the \code{similarity} function.}
 \usage{
-similarity(abundances, abundances2 = FALSE, q = 1, boot = FALSE, boot.arg = list(s.sizes = 'default', num.iter = 100))
+similarity(abundances, abundances2 = NULL, q = 1, boot = FALSE, boot.arg = list(s.sizes = NULL, num.iter = 100))
 }
 \arguments{
   \item{abundances}{Community data as a matrix where columns are individual species and rows are sites. Matrix elements are abundance data (e.g. counts, percent cover estimates).  May be given as a vector with abundances2 as a vector for a second community.}

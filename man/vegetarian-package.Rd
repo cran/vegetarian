@@ -10,14 +10,14 @@ This package computes diversity with uncertainty estimates for community data se
 \tabular{ll}{
 Package: \tab vegetarian\cr
 Type: \tab Package\cr
-Version: \tab 1.1\cr
+Version: \tab 1.2\cr
 Date: \tab 2009-08-23\cr
 License: \tab GPL-2\cr
 LazyLoad: \tab yes\cr
 }
 
 The core of the vegetarian library is the \code{d} function, which calculates the basic alpha, beta, and gamma diversity 'numbers equivalents' from community data.  \code{H} uses \code{d} to calculate the standard diversity indices.  The functions \code{similarity}, \code{M.homog}, \code{Rel.homog}, and \code{turnover} call \code{d} to compare diversity across communities.  use \code{sim.table} and/or \code{sim.groups} to produce multiple pairwise similarity comparisons among many sample sites.  All functions can output standard errors by calling \code{bootstrap} internally.  For more detailed bootstrapping outputs, the user can call \code{bootstrap} seperately.  The function \code{normalize.rows} is called by \code{d} to convert count data into frequencies.  The simple function, \code{p.q.sum} is called internally as core part of the diversity calculations, and is probably of little use to the average user, though it may be used to create more complex diversity measures.
-This update corrects an error in the boostrap standard error estimates from the earlier version.
+This update corrects an error in the \code{similarity} function and boostrap standard error estimates from earlier versions.
 
 }
 \author{

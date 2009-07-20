@@ -1,0 +1,17 @@
+c496bd5274cb9b8734ef6bc511c2b240 *DESCRIPTION
+eb80d4f36595e8c461d8f8685c030140 *NAMESPACE
+932c86573fcb45002ad7895965b6da08 *R/vegetarian.R
+ae0db76fe6112eb3ec9fc00efcea7c66 *data/simesants.rda
+19d9d1a9094a5d272fef43acc3b78383 *man/H.Rd
+fa7ec3d3b57670d2b65886a8162e7a3c *man/M.homog.Rd
+cc9ab2a801e7f026c1a43763ff29976b *man/Rel.homog.Rd
+5f66377ca86459d7a2b96c77c62157d4 *man/bootstrap.Rd
+373d14a7c2bbbc1a46703c9675b83189 *man/d.Rd
+84075a16867fe8bd4f9a39f2210465c3 *man/normalize.rows.Rd
+f5a5a526779effbed982130f08faa858 *man/p.q.sum.Rd
+72480c67ae526c997fdcd97d05805924 *man/sim.groups.Rd
+b76f64a503a11f7b1f8270451a3a032c *man/sim.table.Rd
+edaa8289391529acf4365c977c171f5a *man/simesants.Rd
+6c717fd14cfb4e94d0ff3fb9861bb926 *man/similarity.Rd
+291204d29015b0b7786628900d8d61d8 *man/turnover.Rd
+ceed2d3e87bd4d0e2f5d7ab15869fff3 *man/vegetarian-package.Rd

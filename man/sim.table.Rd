@@ -5,7 +5,7 @@
 Creates a summary table of community overlap for all possible pairwise combinations of samples (e.g. sites, plots) using the similarity function.
 }
 \usage{
-sim.table(abundances, q = 1, labels = FALSE, half = TRUE, diag = TRUE, boot = FALSE, boot.arg = list(s.sizes = 'default', num.iter = 100))
+sim.table(abundances, q = 1, labels = FALSE, half = TRUE, diag = TRUE, boot = FALSE, boot.arg = list(s.sizes = NULL, num.iter = 100))
 }
 \arguments{
   \item{abundances}{Community data as a matrix where columns are individual species and rows are sites. Matrix elements are abundance data (e.g. counts, percent cover estimates).}

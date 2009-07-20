@@ -4,7 +4,7 @@
 \description{Given two groups with multiple samples (e.g. sites, plots) the sim.groups function calculates all possible pairwise combinations of within- and between-group comparisons.
 }
 \usage{
-sim.groups(abundances1, abundances2, q = 1, labels = FALSE, boot = FALSE, boot.arg = list(s.sizes = "default", num.iter = 100))
+sim.groups(abundances1, abundances2, q = 1, labels = FALSE, boot = FALSE, boot.arg = list(s.sizes = NULL, num.iter = 100))
 }
 \arguments{
   \item{abundances1}{Community data as a matrix where columns are individual species and rows are sites or a vector of different species within a site.  Matrix and vector elements are abundance data (e.g. counts, percent cover estimates).}
