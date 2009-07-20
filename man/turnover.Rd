@@ -22,6 +22,7 @@ turnover(abundances, abundances2 = FALSE, q = 1, boot = FALSE, boot.arg = list(s
 }
 \references{
 Jost, L. 2007. Partitioning diversity into independent alpha and beta components. Ecology 88(10): 2427-2439.
+
 Harrison, S., S. Ross, and J. Lawton. 1992. Beta diversity on geographic gradients in Britain. Journal of Animal Ecology 61: 151-158.
 }
 \author{Noah Charney, Sydne Record}

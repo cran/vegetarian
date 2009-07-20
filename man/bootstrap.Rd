@@ -16,14 +16,13 @@ bootstrap(abundances, s.sizes = "default", num.iter = 100, func, func.arg = "bla
   \item{sim.par}{A logical specifying whether or not to output the individual parameters calculated on each simulated population.}
 }
 \details{
-The procedure is outlined in Chao et al. (2008).  For each site (row) of the original data set, the total sample size and the relative proportions of each species are used to construct a multinomial distribution.  Scores are drawn from this multinomial distribution to generate a simulated population at that site.  This is done for each row until an entire simulated community matrix is generated.  The supplied function (func) is then applied to this simulated matrix to calculate the focal parameter for that iteration.  This process of sampling from the multinormal distributions and applying the function is repeated for as many times as is specified by num.iter.  From the distribution of output parameter values we can now calculate a standard error or other measure of uncertainty.  While this function is called internally by other functions in the vegetarian library, only the standard error is reported by those functions.  The user may wish to call bootstrap directly to access the simulated populations and measure uncertainty in other ways.
+The procedure is outlined in Chao et al. (2008).  For each site (row) of the original data set, the total sample size and the relative proportions of each species are used to construct a multinomial distribution.  Scores are drawn from this multinomial distribution to generate a simulated population at that site.  This is done for each row until an entire simulated community matrix is generated.  The supplied function (func) is then applied to this simulated matrix to calculate the focal parameter for that iteration.  This process of sampling from the multinormal distributions and applying the function is repeated for as many times as is specified by num.iter.  The standard deviation of the bootstrap parameter values serves as the standard error for the parameter estimate based on the real data.
+
+While this function is called internally by other functions in the vegetarian library, only the standard error is reported by those functions.  The user may wish to call bootstrap directly to access the simulated populations and measure uncertainty in other ways.
 }
 
 \value{
-  \item{variance}{Variance of parameter simulations}
-  \item{StdDev}{Standard Deviation of parameter simulations}
-  \item{StdErr}{Standard Error of parameter simulations}
-  \item{StdDev}{Standard Deviation of parameter simulations}
+  \item{StdErr}{Bootstrap Standard Error for parameter estimate}
   \item{Simulated.Populations}{(optional) Array containing simulated populations}
   \item{Simulated.Parameters}{(optional) Vector containing parameter for each simulated population}
 

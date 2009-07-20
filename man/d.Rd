@@ -8,7 +8,7 @@ d(abundances, lev = "alpha", wts = FALSE, q = 1, boot = FALSE, boot.arg = list(s
 }
 \arguments{
   \item{abundances}{ Community data as a matrix where columns are individual species and rows are sites.  Matrix elements are abundance data (e.g. counts, percent cover estimates).}
-  \item{lev}{Level of diversity to be calculated.  Will accept: 'alpha', 'beta' ,or 'gamma.'}
+  \item{lev}{Level of diversity to be calculated.  Will accept: 'alpha,' 'beta,' or 'gamma.'}
   \item{wts}{ A vector of community weights whose length equals the number of communities being compared.  See details below for examples of when community weights might be treated as equal or unequal. Defaults to wts=FALSE where all communities are equally weighted.}
   \item{q}{Order of the diversity measure.  Defaults to the Shannon case where q = 1.}
   \item{boot}{Logical indicating whether to use bootstrapping to estimate uncertainty.}
@@ -26,7 +26,9 @@ Determining how to set community weights depends on the types of comparisons abo
 }
 \references{
 Jost, L. 2006. Entropy and diversity. Oikos 113(2): 363-375.
+
 Jost, L. 2007. Partitioning diversity into independent alpha and beta components. Ecology 88(10):  2427-2439.
+
 Hill, M. 1973. Diversity and evenness: A unifying notation and its consequences. Ecology 54: 427-432.
 }
 \author{Noah Charney, Sydne Record}

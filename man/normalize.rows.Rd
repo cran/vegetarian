@@ -17,7 +17,9 @@ All of Jost's calculation for partitioning diversity are based on relative propo
 }
 \references{
 Jost, L. 2006. Entropy and diversity. Oikos 113(2): 363-375.
+
 Jost, L. 2007. Partitioning diversity into independent alpha and beta components. Ecology 88(10):  2427-2439.
+
 Hill, M. 1973. Diversity and evenness: A unifying notation and its consequences. Ecology 54: 427-432.
 }
 \author{Noah Charney, Sydne Record}

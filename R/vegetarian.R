@@ -63,22 +63,21 @@ if(func.arg[1]!="blank"){simulated.param[i]<-do.call(what=func,arg=c(abundances=
 
 
 variance<-( sum( (simulated.param-mean(simulated.param) )^2) )/length(simulated.param)
-stdev<-sqrt(variance)
-stderr<-stdev/sqrt(length(simulated.param))
+stderr<-sqrt(variance)
 
 if(sim.pop==FALSE & sim.par==FALSE){
-OUT<-list(Variance=variance,StdDev=stdev,StdErr=stderr)
+OUT<-list(StdErr=stderr)
 }
 if(sim.pop==FALSE & sim.par==TRUE){
-OUT<-list(Simulated.Parameters=simulated.param,Variance=variance,StdDev=stdev,StdErr=stderr)
+OUT<-list(Simulated.Parameters=simulated.param,StdErr=stderr)
 }
 
 if(sim.pop==TRUE & sim.par==FALSE){
-OUT<-list(Simulated.Populations=boots,Variance=variance,StdDev=stdev,StdErr=stderr)
+OUT<-list(Simulated.Populations=boots,StdErr=stderr)
 }
 
 if(sim.pop==TRUE & sim.par==TRUE){
-OUT<-list(Simulated.Populations=boots,Simulated.Parameters=simulated.param,Variance=variance,StdDev=stdev,StdErr=stderr)
+OUT<-list(Simulated.Populations=boots,Simulated.Parameters=simulated.param,StdErr=stderr)
 }
 
 OUT
